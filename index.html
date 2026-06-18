@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 每日新聞 - 最新 AI 動態彙整</title>
+<meta name="description" content="每日 AI 新聞彙整，中英文來源。追蹤最新人工智慧動態：機器學習、深度學習、生成式 AI、大語言模型、AI 工具、AI 產業趨勢。">
+<meta name="keywords" content="AI, 人工智慧, AI新聞, 機器學習, 深度學習, 生成式AI, 大語言模型, AI工具, AI趨勢">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="AI 每日新聞 - 最新 AI 動態彙整">
+<meta property="og:description" content="每日 AI 新聞彙整，中英文來源。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sonycat-ai.github.io">
+<link rel="canonical" href="https://sonycat-ai.github.io">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', sans-serif; background: #0f0f23; color: #e0e0e0; line-height: 1.7; }
+header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 60px 20px; text-align: center; }
+header h1 { font-size: 2.5em; color: #fff; margin-bottom: 10px; }
+header p { color: #a0a0c0; font-size: 1.1em; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+.stats { display: flex; justify-content: center; gap: 40px; margin: 30px 0; }
+.stat { text-align: center; }
+.stat-num { font-size: 2em; font-weight: bold; color: #00d4ff; }
+.stat-label { color: #888; font-size: 0.9em; }
+.card { background: #1a1a2e; border: 1px solid #2a2a4a; border-radius: 12px; padding: 24px; margin-bottom: 20px; transition: transform 0.2s, box-shadow 0.2s; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+.card h2 { color: #00d4ff; font-size: 1.3em; margin-bottom: 8px; }
+.card a { color: #00d4ff; text-decoration: none; }
+.card a:hover { text-decoration: underline; }
+.card .desc { color: #b0b0c0; margin: 8px 0; }
+.card .meta { color: #666; font-size: 0.85em; }
+.tag { display: inline-block; background: #16213e; color: #00d4ff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 6px; }
+footer { text-align: center; padding: 40px 20px; color: #666; border-top: 1px solid #2a2a4a; margin-top: 40px; }
+footer a { color: #00d4ff; }
+.subscribe { background: linear-gradient(135deg, #0f3460, #16213e); border-radius: 12px; padding: 30px; text-align: center; margin: 30px 0; }
+.subscribe h3 { color: #fff; margin-bottom: 15px; }
+.subscribe a { display: inline-block; background: #00d4ff; color: #000; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; }
+.sources { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 20px 0; }
+.source-tag { background: #16213e; color: #a0a0c0; padding: 6px 16px; border-radius: 20px; font-size: 0.85em; }
+</style>
+</head>
+<body>
+<header>
+<h1>🤖 AI 每日新聞</h1>
+<p>最新人工智慧動態彙整 | Daily AI News Roundup</p>
+</header>
+
+<div class="container">
+<div class="stats">
+<div class="stat"><div class="stat-num">8</div><div class="stat-label">新聞來源</div></div>
+<div class="stat"><div class="stat-num">24/7</div><div class="stat-label">即時更新</div></div>
+<div class="stat"><div class="stat-num">中英</div><div class="stat-label">雙語內容</div></div>
+</div>
+
+<div class="subscribe">
+<h3>📡 追蹤 Telegram Channel 獲取最新 AI 動態</h3>
+<a href="https://t.me/+zL3S9-68KAJhMTQ9" target="_blank">加入頻道</a>
+</div>
+
+<div class="sources">
+<span class="source-tag">AIbase</span>
+<span class="source-tag">36氪 AI</span>
+<span class="source-tag">機器之心</span>
+<span class="source-tag">量子位</span>
+<span class="source-tag">TechCrunch</span>
+<span class="source-tag">The Verge</span>
+<span class="source-tag">VentureBeat</span>
+<span class="source-tag">MIT Tech Review</span>
+</div>
+
+<div id="news"></div>
+
+<div class="subscribe">
+<h3>📰 不想錯過任何 AI 新聞？</h3>
+<p style="color:#a0a0c0; margin: 10px 0;">每天自動推送最新 AI 新聞到您的 Telegram</p>
+<a href="https://t.me/+zL3S9-68KAJhMTQ9" target="_blank">立即訂閱</a>
+</div>
+</div>
+
+<footer>
+<p>AI 每日新聞 &copy; 2026 | 自動彙整全球 AI 新聞</p>
+<p><a href="https://t.me/+zL3S9-68KAJhMTQ9">Telegram Channel</a> | 每日 9:00 更新</p>
+</footer>
+
+<script>
+const newsData = [
+];
+
+const container = document.getElementById('news');
+if (newsData.length === 0) {
+    container.innerHTML = '<div class="card"><h2>📡 新聞載入中...</h2><p>新聞將於每日 9:00 更新。請關注 <a href="https://t.me/+zL3S9-68KAJhMTQ9" target="_blank">Telegram Channel</a> 獲取最新內容。</p></div>';
+} else {
+    newsData.forEach((item, i) => {
+        container.innerHTML += `<div class="card">
+<h2>${i+1}. <a href="${item.link}" target="_blank">${item.title}</a></h2>
+<span class="tag">${item.source}</span>
+<p class="desc">${item.desc || ''}</p>
+<p class="meta">${item.date || ''}</p>
+</div>`;
+    });
+}
+</script>
+</body>
+</html>
